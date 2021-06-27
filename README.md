@@ -79,6 +79,7 @@ Desenvolvimento de uma aplicação de perguntas e respostas ao vivo usando o con
 * * Suporte a video streaming embbedded
 * * Uso de styled components
 * * Versão PWA
+* * Rotas privadas
 
 
 
