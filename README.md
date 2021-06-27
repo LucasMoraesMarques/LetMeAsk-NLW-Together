@@ -21,7 +21,7 @@
 Desenvolvimento de uma aplicação de perguntas e respostas ao vivo usando o conceito Single Page Application através do ReactJS
 <p align='center' id='-project'>
   <img src="https://user-images.githubusercontent.com/62614948/123547501-6e61ac00-d737-11eb-819b-786592301af4.png" width='600px'>
-  <img src="https://user-images.githubusercontent.com/62614948/123546919-09a55200-d735-11eb-93b3-a8cc7cf5a65d.png" width='600px'>
+  <img src="https://user-images.githubusercontent.com/62614948/123550123-6ce9b100-d742-11eb-8655-22ddfa23c676.png" width='600px'>
 </p>
 
 
@@ -71,7 +71,7 @@ Desenvolvimento de uma aplicação de perguntas e respostas ao vivo usando o con
 * Responsividade
 * Dark Mode
 <p align='center' id='-project'>
-  <img src="https://user-images.githubusercontent.com/62614948/123547434-26db2000-d737-11eb-88f3-f907d5f92f8d.png" width='600px'>
+  <img src="https://user-images.githubusercontent.com/62614948/123550156-a3bfc700-d742-11eb-959c-02e2ff4658b2.png" width='600px'>
 </p>
   
 * Mensagens de sucesso com o pacote toastify
