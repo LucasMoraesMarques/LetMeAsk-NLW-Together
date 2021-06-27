@@ -199,11 +199,8 @@ main{
 
   &.dark{
     background-color: #070707;
+    color: white;
 
-  *{
-      color: white;
-      
-    }
 
     aside{
       background-image: none !important;
@@ -243,10 +240,10 @@ main{
 
   &.dark{
     background-color: #070707;
+    color: white;
 
-  *{
-      color: white;
-      
+    input{
+      color: 'black' !important;
     }
     }}
 
