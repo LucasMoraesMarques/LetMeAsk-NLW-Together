@@ -1,0 +1,28 @@
+button{
+  &.chip{
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #000080;;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #29292e;
+
+    &.dark{
+      color:#000080 !important;
+
+      &.selected{
+        color:#fff !important;
+        background-color: #000080;
+
+      }
+    }
+
+  &.selected{
+    border: 1px solid #000080;
+    color: #fff;
+    background-color: #000080;
+    
+  }
+}
+}

@@ -1,0 +1,284 @@
+#page-auth{
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+
+
+aside{
+  flex: 7;
+  background-image: radial-gradient(#2589bd, #000022);
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 80px;
+  text-align: center;
+
+
+  img{
+    max-width: 320px;
+    width: 80%;
+    color: #ffd000;
+    margin: 0px auto;
+  }
+
+  strong{
+    font: 700 36px 'Poppins', sans-serif;
+    line-height:42px;
+    margin-top: 16px;
+
+  }
+
+  p {
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 16px;
+    color: #f8f8f8;
+
+  }
+}
+
+main{
+  flex: 8;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.main-content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  align-items: stretch;
+  text-align: center;
+
+  > img {
+    align-self: center;
+  }
+
+  h2{
+    font-size: 24px;
+    margin: 64px 0 24px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .room-settings{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      width: 100%;
+
+      span{
+        font-size: 14px;
+        color: #737380;
+        
+      }
+      .triangle{
+        content: '';
+        display: inline-block;
+        width:0;
+        height:0;
+
+        &.right{
+          margin-right: 8px;
+            margin-left: 5px;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 6px solid #4C4B63;
+          }
+
+        &.bottom{
+          margin-right: 8px;
+            margin-left: 5px;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #4C4B63;
+          }
+        
+      }
+
+      #settings{
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+      }
+
+    }
+
+    input, textarea {
+      height: 50px;
+      border-radius: 8px;
+      padding: 0 16px;
+      background-color: #FFF;
+      border: 1px solid #a8a8b3;
+    }
+
+    textarea{
+      resize:vertical;
+      min-height: 50px;
+      padding-top: 10px;
+    }
+
+    button, input {
+      width: 100%;
+    }
+  }
+
+  p{
+    font-size: 14px;
+    color: #737380;
+    margin-top: 16px;
+
+    a{
+      color: #000080
+    }
+  }
+}
+  .create-room{
+    margin-top: 64px;
+    height: 50px;
+    border-radius: 8px;
+    font-weight: 500;
+    background-color: #ea4335;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: filter 0.2s;
+    cursor: pointer;
+    border: 0px;
+
+    img{
+     margin-right: 8px;
+    }
+
+    &:hover{
+      filter: brightness(0.9);
+    }
+
+  }
+  .separator{
+    font-size: 14px;
+    color: #a8a8b3;
+    margin: 32px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 0px;
+
+    &::before{
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: #a8a8b3;
+      margin-right: 16px;
+
+    }
+
+    &::after{
+      content: '';
+      flex: 1;
+      height: 1px;
+      background-color: #a8a8b3;
+      margin-left: 16px;
+    }
+
+  }
+
+  &.dark{
+    background-color: #070707;
+
+  *{
+      color: white;
+      
+    }
+
+    aside{
+      background-image: none !important;
+    }
+
+    h1, strong{
+      color: #ffd900 !important;
+    }
+
+    span, div{
+      color: white !important;
+    }
+  }
+
+  @media only screen and (max-width:800px){
+      aside{
+        strong{
+          font: 700 30px 'Poppins', sans-serif;
+          line-height:42px;
+        }
+        p{
+          font-size:20px;
+        }
+      }
+     textarea, .main-content form input{
+          height: 40px;
+          font-weight: 400;
+          color: #fff;
+          padding: 0 15px;
+
+  }
+
+   .create-room{
+    height: 40px;
+
+  }
+
+  &.dark{
+    background-color: #070707;
+
+  *{
+      color: white;
+      
+    }
+    }}
+
+    @media only screen and (max-width:600px){
+      flex-direction: column;
+      justify-content: center;
+
+      aside{
+        display: none;
+        strong{
+          font: 700 28px 'Poppins', sans-serif;
+          line-height:42px;
+        }
+        p{
+          font-size:18px;
+        }
+      }
+
+      main{
+        flex: 1;
+      }
+
+     textarea, .main-content form input{
+          height: 40px;
+          font-weight: 400;
+          color: #fff;
+          padding: 0 15px;
+
+  }
+
+  &.dark{
+    background-color: #070707;
+
+  }
+}}
