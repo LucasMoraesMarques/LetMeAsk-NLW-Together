@@ -65,14 +65,15 @@ export function Room() {
 
     await database.ref(`rooms/${roomId}/questions`).push(question);
     setNewQuestion('')
+    setSelectedCategories([''])
   }
 
   async function handleLikeQuestion(questionId: string, likeId: string | undefined) {
     if (likeId) {
-      const newLike = await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove()
+      await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove()
     }
     else {
-      const newLike = await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
+      await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
         authorId: user?.id,
       })
     }
@@ -125,12 +126,12 @@ export function Room() {
       })
     }))
     if(orderByLikes){
-      setShownQuestions(questions.sort((a, b) =>{
+      setShownQuestions(shownQuestions.sort((a, b) =>{
       return b.likeCount - a.likeCount}))
     }
 
     if(hidAnswered){
-      setShownQuestions(questions.filter((question) =>{
+      setShownQuestions(shownQuestions.filter((question) =>{
         return !question.isAnswered
       }))
     }
@@ -230,7 +231,7 @@ export function Room() {
           <div className="orderAndHid">
             <div>
               <input type="checkbox" name="orderByLikes" id="" onClick={() => {!orderByLikes ?setOrderByLikes(true) : setOrderByLikes(false)}}/>
-              <label htmlFor="orderByLikes">Ordenar por número de likes</label>
+              <label htmlFor="orderByLikes">Ordenar por número de likes (habilite esconder respondidas)</label>
             </div>
             <div>
               <input type="checkbox" name="orderBy" id="" 
@@ -243,7 +244,7 @@ export function Room() {
         </form>
         
         <div className="question-list">
-        {(!questions.length && selectedCategories.length === 0)?  
+        {(!questions.length)?  
           <div className='empty-questions'>
           <img src={emptyQuestionsImg} alt='Nenhuma pergunta feita ainda'/> 
           <p>Ainda não existem perguntas a serem respondidas!</p>

@@ -60,7 +60,7 @@ export function NewRoom() {
 
   return (
     <div id='page-auth' className={theme}>
-      <aside>
+      <aside className={theme}>
         <img src={illustrationImg2} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao vivo</strong>
         <p>Tire as dúvidas de sua audiência em tempo real</p>
@@ -72,7 +72,8 @@ export function NewRoom() {
           <form action="" onSubmit={handleCreateRoom}>
             <input type="text" name="" required id="" title="Especifique um nome para a sala" placeholder="Nome da sala"
               onChange={event => setNewRoom(event.target.value)}
-              value={newRoom} />
+              value={newRoom} 
+              className={theme}/>
             <div className="room-settings">
               <div style={{cursor:'pointer'}} onClick={showRoomSettings}>
                 <div className="triangle right" ></div>
@@ -82,15 +83,18 @@ export function NewRoom() {
                 <textarea placeholder="Digite as categorias separadas por -"
                 title="Especifique categorias para filtrar as perguntas"
                 onChange={event => setCategories(event.target.value)} 
-                value={categories}/>
+                value={categories}
+                className={theme}/>
                 <input type="number" min="0" name="" id="" placeholder="Digite o limite de perguntas (0)" 
                 title='Especifique um limite de perguntas por pessoa para evitar flood'
                 onChange={event => setQuestionLimit(event.target.value)} 
-                value={questionLimit}/>
+                value={questionLimit}
+                className={theme}/>
                 <input type="number" min="0"name="" id="" placeholder="Digite o tempo de espera (s)" 
                 title='Especifique intervalo entre duas perguntas consecutivas'
                 onChange={event => setTimeInterval(event.target.value)} 
-                value={timeInterval}/>
+                value={timeInterval}
+                className={theme}/>
               </div>
             </div>
             <Button type="submit">

@@ -1,5 +1,5 @@
 #page-room{
-
+  height: 100%;
   
   header{
     padding: 24px;
@@ -256,7 +256,6 @@
   &.dark{
     background-color: #070707;
     color: white;
-    height: 100vh; 
 
 
     h1{
@@ -293,6 +292,20 @@
       gap:5px;
 
     }
+
+    &.dark{
+      background-color: #070707;
+      color: white;
+  
+  
+      h1{
+        color: #ffd900 !important;
+      }
+  
+      span, div{
+        color: white !important;
+      }
+    }
   
   }
 
@@ -314,7 +327,23 @@
       flex-direction: column;
     }
   }
-    
+  &.dark{
+    background-color: #070707;
+    color: white;
+
+    input, textarea{
+      color:black;
+    }
+
+
+    h1{
+      color: #ffd900 !important;
+    }
+
+    span, div{
+      color: white !important;
+    }
+  }
 
     }
 

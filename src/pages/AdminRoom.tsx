@@ -112,12 +112,12 @@ export function AdminRoom() {
       })
     }))
     if(orderByLikes){
-      setShownQuestions(questions.sort((a, b) =>{
+      setShownQuestions(shownQuestions.sort((a, b) =>{
       return b.likeCount - a.likeCount}))
     }
 
     if(hidAnswered){
-      setShownQuestions(questions.filter((question) =>{
+      setShownQuestions(shownQuestions.filter((question) =>{
         return !question.isAnswered
       }))
     }
@@ -187,13 +187,13 @@ export function AdminRoom() {
             <span>Filtrar por categorias</span>
             {availableCategories.map((value, index) => {
               return <Chip key={index} onClick={() => handleShownCategories(value)}
-              className={selectedCategories.includes(value) ? `chip selected ${theme}` : `chip ${theme}`}>{value}</Chip>
+              className={shownCategories.includes(value) ? `chip selected ${theme}` : `chip ${theme}`}>{value}</Chip>
             })}
           </div>
           <div className="orderAndHid">
             <div>
               <input type="checkbox" name="orderByLikes" id="" onClick={() => { !orderByLikes ? setOrderByLikes(true) : setOrderByLikes(false) }} />
-              <label htmlFor="orderByLikes">Ordenar por número de likes</label>
+              <label htmlFor="orderByLikes">Ordenar por número de likes (habilite esconder respondidas)</label>
             </div>
             <div>
               <input type="checkbox" name="orderBy" id=""
@@ -221,6 +221,7 @@ export function AdminRoom() {
                   isHighlighted={question.isHighlighted}
                 >{!question.isAnswered && (
                     <>
+                      {question.likeCount} likes
                       <button
                         type="button"
                         onClick={() => handleCheckQuestionAsAnswered(question.id)}

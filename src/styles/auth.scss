@@ -6,13 +6,21 @@
 
 aside{
   flex: 7;
-  background-image: radial-gradient(#2589bd, #000022);
   color: #FFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 120px 80px;
   text-align: center;
+
+  &.dark{
+    background-image: none;
+  }
+
+  &.light{
+    background-image: radial-gradient(#2589bd, #000022);
+
+  }
 
 
   img{
@@ -36,7 +44,7 @@ aside{
     color: #f8f8f8;
 
   }
-}
+  }
 
 main{
   flex: 8;
@@ -44,9 +52,7 @@ main{
   display: flex;
   align-items: center;
   justify-content: center;
-  
-
-}
+  }
 
 .main-content{
   display: flex;
@@ -62,8 +68,10 @@ main{
 
   h2{
     font-size: 24px;
-    margin: 64px 0 24px;
+    margin: 50px 0 24px;
     font-family: 'Poppins', sans-serif;
+    color: rgb(197, 193, 193);
+    text-shadow:1px 1px 1px #000080;
   }
 
   form {
@@ -80,7 +88,8 @@ main{
 
       span{
         font-size: 14px;
-        color: #737380;
+        color: rgb(197, 193, 193);
+        text-shadow:1px 1px 1px #000080;
         
       }
       .triangle{
@@ -122,6 +131,11 @@ main{
       padding: 0 16px;
       background-color: #FFF;
       border: 1px solid #a8a8b3;
+      color:#000080;
+
+      &.dark{
+        color:'black';
+      }
     }
 
     textarea{
@@ -144,7 +158,7 @@ main{
       color: #000080
     }
   }
-}
+  }
   .create-room{
     margin-top: 64px;
     height: 50px;
@@ -197,23 +211,12 @@ main{
 
   }
 
-  &.dark{
-    background-color: #070707;
-    color: white;
-
-
-    aside{
-      background-image: none !important;
-    }
 
     h1, strong{
       color: #ffd900 !important;
     }
 
-    span, div{
-      color: white !important;
-    }
-  }
+
 
   @media only screen and (max-width:800px){
       aside{
@@ -225,11 +228,18 @@ main{
           font-size:20px;
         }
       }
-     textarea, .main-content form input{
+     textarea, input{
           height: 40px;
           font-weight: 400;
-          color: #fff;
           padding: 0 15px;
+
+          &.light{
+            color: '#fff';
+          }
+
+          &.dark{
+            color: 'black';
+          }
 
   }
 
@@ -238,14 +248,7 @@ main{
 
   }
 
-  &.dark{
-    background-color: #070707;
-    color: white;
-
-    input{
-      color: 'black' !important;
-    }
-    }}
+  }
 
     @media only screen and (max-width:600px){
       flex-direction: column;
@@ -266,16 +269,24 @@ main{
         flex: 1;
       }
 
-     textarea, .main-content form input{
+     textarea, input{
           height: 40px;
           font-weight: 400;
-          color: #fff;
           padding: 0 15px;
 
-  }
+          &.light{
+            color: '#fff';
+          }
 
-  &.dark{
-    background-color: #070707;
+          &.dark{
+            color: 'black';
+          }
 
   }
-}}
+}
+&.dark {
+  background-color: #070707;
+  input, textarea{
+    color:'black';}
+}
+}
